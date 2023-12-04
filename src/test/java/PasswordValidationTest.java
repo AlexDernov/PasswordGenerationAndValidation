@@ -118,5 +118,15 @@ public class PasswordValidationTest {
         assertTrue(actual);
 
     }
+    @Test
+    public void newPasswordGeneratorCheck_when9_thenReturn9Characters(){
+        //GIVEN
+        int howLong = 9;
+        //WHEN
+        int actual = (PasswordValidation.newPasswordGenerator(howLong).length());
+        //THEN
+        assertEquals(9, actual);
+
+    }
 
 }
