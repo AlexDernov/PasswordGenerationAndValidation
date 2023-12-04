@@ -1,6 +1,8 @@
 public class PasswordValidation {
     public static boolean hasNumbers = false;
+    public static boolean hasUpperCase = false;
     public static String numbers = "1234567890";
+    public static String abc = "abcdefghijklmnopqrstuvwxyz";
     public static boolean lengthCheck(String password) {
         return password.length() >= 8;
     }
@@ -16,5 +18,18 @@ public class PasswordValidation {
             }
         }
         return hasNumbers;
+    }
+    public static boolean upperCaseCheck(String password) {
+        int counter = 0;
+        char[] passwordChar = password.toCharArray();
+        for (char c : passwordChar) {
+            if (abc.toUpperCase().contains(String.valueOf(c))) {
+                counter++;
+            }
+            if (counter > 0) {
+                hasUpperCase = true;
+            }
+        }
+        return hasUpperCase;
     }
 }
