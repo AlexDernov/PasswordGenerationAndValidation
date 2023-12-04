@@ -2,8 +2,10 @@ public class PasswordValidation {
     public static boolean hasNumbers = false;
     public static boolean hasUpperCase = false;
     public static boolean hasLowerCase = false;
+    public static boolean hasSpecialCharacters = false;
     public static String numbers = "1234567890";
     public static String abc = "abcdefghijklmnopqrstuvwxyz";
+    public static String specialCharacters = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     public static boolean lengthCheck(String password) {
         return password.length() >= 8;
     }
@@ -45,5 +47,18 @@ public class PasswordValidation {
             }
         }
         return hasLowerCase;
+    }
+    public static boolean specialCharactersCheck(String password) {
+        char[] fromPassword = password.toCharArray();
+        int counter = 0;
+        for (char c : fromPassword) {
+            if (specialCharacters.contains(String.valueOf(c))){
+                counter++;
+            }
+            if(counter>0){
+                hasSpecialCharacters = true;
+            }
+
+        }return hasSpecialCharacters;
     }
 }
