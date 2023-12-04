@@ -62,5 +62,25 @@ public class PasswordValidationTest {
         assertFalse(actual);
 
     }
+    @Test
+    public void lowerCaseCheck_whenLowAndUp_thenReturnTrue(){
+        //GIVEN
+        String password = "nHadJfjNlf";
+        //WHEN
+        boolean actual = PasswordValidation.lowerCaseCheck(password);
+        //THEN
+        assertTrue(actual);
+
+    }
+    @Test
+    public void lowerCaseCheck_whenNoLowAndUp_thenReturnFalse(){
+        //GIVEN
+        String password = "DHKUZREBMP";
+        //WHEN
+        boolean actual = PasswordValidation.lowerCaseCheck(password);
+        //THEN
+        assertFalse(actual);
+
+    }
 
 }
