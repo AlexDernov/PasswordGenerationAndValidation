@@ -1,7 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.testng.annotations.Test;
 
-class PasswordValidationTest {
+public class PasswordValidationTest {
     @Test
     public void lengthCheckTest_when0Till7_thenReturnFalse() {
         //GIVEN
