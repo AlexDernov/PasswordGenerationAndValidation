@@ -22,5 +22,25 @@ public class PasswordValidationTest {
         assertTrue(actual);
 
     }
+    @Test
+    public void numbersCheckTest_whenNumbers_thenReturnTrue() {
+        //GIVEN
+        String password = "nhj4df4jlf";
+        //WHEN
+        boolean actual = PasswordValidation.numbersCheck(password);
+        //THEN
+        assertTrue(actual);
+
+    }
+    @Test
+    public void numbersCheckTest_whenNoNumbers_thenReturnFalse() {
+        //GIVEN
+        String password = "nhjadfjlf";
+        //WHEN
+        boolean actual = PasswordValidation.numbersCheck(password);
+        //THEN
+        assertFalse(actual);
+
+    }
 
 }
