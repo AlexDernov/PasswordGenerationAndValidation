@@ -1,6 +1,7 @@
 public class PasswordValidation {
     public static boolean hasNumbers = false;
     public static boolean hasUpperCase = false;
+    public static boolean hasLowerCase = false;
     public static String numbers = "1234567890";
     public static String abc = "abcdefghijklmnopqrstuvwxyz";
     public static boolean lengthCheck(String password) {
@@ -31,5 +32,18 @@ public class PasswordValidation {
             }
         }
         return hasUpperCase;
+    }
+    public static boolean lowerCaseCheck(String password) {
+        int counter = 0;
+        char[] passwordChar = password.toCharArray();
+        for (char c : passwordChar) {
+            if (abc.contains(String.valueOf(c))) {
+                counter++;
+            }
+            if (counter > 0) {
+                hasLowerCase = true;
+            }
+        }
+        return hasLowerCase;
     }
 }
