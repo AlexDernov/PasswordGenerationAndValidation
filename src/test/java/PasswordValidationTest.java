@@ -81,6 +81,23 @@ public class PasswordValidationTest {
         //THEN
         assertFalse(actual);
 
+    }@Test
+    public void specialCharactersCheck_whenNoSpecialCharacters_thenReturnFalse(){
+        //GIVEN
+        String password = "Password1";
+        //WHEN
+        boolean actual = PasswordValidation.specialCharactersCheck(password);
+        //THEN
+        assertFalse(actual);
+    }
+    @Test
+    public void specialCharactersCheck_whenSpecialCharacters_thenReturnTrue(){
+        //GIVEN
+        String password = "Password1./";
+        //WHEN
+        boolean actual = PasswordValidation.specialCharactersCheck(password);
+        //THEN
+        assertTrue(actual);
     }
 
 }
